@@ -1,0 +1,129 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<DialogPane fx:controller="FinalProject.ProductDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            style="-fx-font-family: Times New Roman bold, Arial, sans-serif;">
+    <header>
+        <Label text="Product">
+            <font>
+                <Font name="Times New Roman bold" size="25.0" />
+            </font>
+        </Label>
+    </header>
+    <content>
+        <HBox>
+
+        <VBox>
+            <Label text="ID"/>
+            <TextField  fx:id="addID" editable="false"/>
+            <Label text="Product Name"/>
+            <TextField fx:id="addName"/>
+            <Label text="Price"/>
+            <TextField  fx:id="addPrice"/>
+            <Label text="Stock"/>
+            <TextField  fx:id="addStock"/>
+            <Label text="Min"/>
+            <TextField  fx:id="addMin"/>
+            <Label text="Max"/>
+            <TextField  fx:id="addMax"/>
+        </VBox>
+        <VBox prefWidth="356">
+            <Label text="All Parts"/>
+            <TextField fx:id="searchUnadded"/>
+            <Button text="Search" prefWidth="90"
+                    onAction="#searchUnaddedPart"/>
+            <TableView fx:id="unaddedPartsList">
+                <columns>
+                    <TableColumn text = "ID" prefWidth="25.0">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="id" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Price">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="price"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Quantity">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="stock"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Min">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="min"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Max">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="max"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Creator">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="machineOrCompany"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            <Button text="Add" prefWidth="90" onMouseClicked="#addAssociatedPart"/>
+
+        </VBox>
+        <VBox prefWidth="356">
+            <Label text="Associated Parts"/>
+            <TextField fx:id="searchAssociated"/>
+            <Button text="Search" prefWidth="90"
+                    onAction="#searchAssociatedPart"/>
+            <TableView fx:id="associatedPartsList">
+                <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+                <columns>
+                    <TableColumn text = "ID" prefWidth="25.0">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="id"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Price">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="price"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Quantity">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="stock"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Min">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="min"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Max">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="max"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text = "Creator">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="machineOrCompany"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            <Button text="Remove" prefWidth="90" onMouseClicked="#removeAssociatedPart"/>
+        </VBox>
+        </HBox>
+    </content>
+</DialogPane>

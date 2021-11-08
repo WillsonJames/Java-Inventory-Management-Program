@@ -1,0 +1,36 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<DialogPane fx:controller="FinalProject.PartDialogController"
+            xmlns:fx="http://javafx.com/fxml"
+            style="-fx-font-family: Times New Roman bold, Arial, sans-serif;">
+    <header>
+        <Label text="Part">
+            <font>
+                <Font name="Times New Roman bold" size="25.0" />
+            </font>
+        </Label>
+    </header>
+    <content>
+            <VBox>
+                <Label text="ID"/>
+                <TextField  fx:id="addID" editable="false"/>
+                <Label text="Part Name"/>
+                <TextField fx:id="addName"/>
+                <Label text="Price"/>
+                <TextField  fx:id="addPrice"/>
+                <Label text="Stock"/>
+                <TextField  fx:id="addStock"/>
+                <Label text="Min"/>
+                <TextField  fx:id="addMin"/>
+                <Label text="Max"/>
+                <TextField  fx:id="addMax"/>
+                <fx:define>
+                    <ToggleGroup fx:id="partType"/>
+                </fx:define>
+                <RadioButton text="In House" fx:id="inHouse" toggleGroup="$partType" selected="true"/>
+                <RadioButton text="Outsourced" fx:id="outsourced" toggleGroup="$partType"/>
+                <TextField  fx:id="inOut"/>
+        </VBox>
+    </content>
+</DialogPane>
